@@ -22,7 +22,14 @@ $ git config --global user.email geobera0910@naver.com
    ```
 
    ```bash
-   - slave
+   - collabs
    1) master의 repository를 fork
    2) fork한 repository를 복사해서 git clone `주소`
+   
+   $ git add .
+   $ git commit -m "work"
+   $ git push origin master # collabs의 repository에 push된다.
+   
+   # pull request에서 merge 요청을 보낸다.
    ```
+
