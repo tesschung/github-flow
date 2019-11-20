@@ -8,24 +8,26 @@
 2. (필수) 해당 유저가 좋아하는 영화 정보가 모두 출력됩니다.
 3. (필수) 해당 유저를 팔로우 한 사람의 수, 팔로잉 한 사람의 수가 출력됩니다. 
 {% endcomment %}
-{% if user.like_movies.all %}
-  {% for movie in user.like_movies.all %}
+<h2>{{ user.username }}</h2>
+{% with followings=user.followings.all followers=user.followers.all%}
+  <p class="lead">
+    팔로잉 : {{ followings|length }} / 팔로워 : {{ followers|length }}
+  </p>
+{% endwith %}
+
+
+{% if user.liked_movies.all %}
+  {% for movie in user.liked_movies.all %}
+  <hr>
     <p>제목: {{ movie.title }}</p>
     <p>영화설명: {{ movie.description }}</p>
-    <p>영화평점: {{ movie.score }}</p>
+    {% comment %} <p>영화평점: {{ movie.score }}</p> {% endcomment %}
+
   {% endfor %}
 {% else %}
   <span>남긴 영화리뷰가 없습니다.</span>
 {% endif %}
 <br>
-<h2 class="display-4">{{ user.username }}</h2>
-{% with followings=user.followings.all followers=user.followers.all%}
-  <p class="lead">
-    팔로잉 : {{ followings|length }} / 팔로워 : {{ followers|length }}
-  </p>
-  <hr class="my-4">
-  {% if user != accounts.user %}
-  {% endif %}
-{% endwith %}
+
 
 {% endblock container %}

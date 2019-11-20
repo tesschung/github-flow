@@ -60,5 +60,4 @@ def like(request, movie_pk):
         user.liked_movies.remove(movie)
     else:
         user.liked_movies.add(movie)
-    
     return redirect('movies:detail', movie_pk)

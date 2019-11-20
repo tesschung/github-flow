@@ -12,15 +12,17 @@
     {% if request.user.is_authenticated %}
     <a href="{% url 'accounts:logout' %}">로그아웃</a>
     <br>
-    {% comment %} <a href="{% url 'movies:like_list' %}">좋아요 목록 보기</a> {% endcomment %}
-    <br>
     <a href="{% url 'accounts:detail' user.pk %}">회원정보</a>
     <br>
     <a href="{% url 'accounts:index' %}">회원목록</a>
+    <br>
+    <a href="{% url 'movies:index' %}">영화목록</a>
     {% else %}
     <a href="{% url 'accounts:login' %}">로그인</a>
     <br>
     <a href="{% url 'accounts:signup' %}">회원가입</a>
+    <br>
+    <a href="{% url 'movies:index' %}">영화목록</a>
     {% endif %}
     <a href=""></a>
     <header>
