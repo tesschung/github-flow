@@ -69,3 +69,47 @@ $ git config --global user.email geobera0910@naver.com
   ```bash
   $ git pull upstream master
   ```
+
+
+
+
+# **Project_10** : Django Pair Programming
+
+<p align="center">
+  <img src="http://img.shields.io/:license-IndongAndSeungwon-green.svg"/>
+  <img src="https://img.shields.io/badge/platform-django-purple.svg"/>
+  <img src="https://img.shields.io/badge/language-python-brightgreen.svg"/>
+</p>
+
+
+
+**Entity Relationship Diagram**
+
+![1574238911514](README.assets/1574238911514.png)
+
+**pjt10** project는 `accounts`와 `movies`로 구성되어있습니다.
+
+> accounts
+
+
+
+
+
+
+
+
+
+
+
+> movies
+
+
+
+
+
+
+
+
+
+
+

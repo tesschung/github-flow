@@ -10,10 +10,9 @@
 {% endcomment %}
 {% if user.like_movies.all %}
   {% for movie in user.like_movies.all %}
-    <span>해당 유저가 작성한 평점 정보가 모두 출력</span>
-    <span>해당 유저가 좋아하는 영화 정보가 모두 출력</span>
-    <p>{{ movie.title }}</p>
-    <p>{{ movie.score }}</p>
+    <p>제목: {{ movie.title }}</p>
+    <p>영화설명: {{ movie.description }}</p>
+    <p>영화평점: {{ movie.score }}</p>
   {% endfor %}
 {% else %}
   <span>남긴 영화리뷰가 없습니다.</span>
