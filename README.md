@@ -26,3 +26,5 @@ $ git config --global user.email geobera0910@naver.com
    1) master의 repository를 fork
    2) fork한 repository를 복사해서 git clone `주소`
    ```
+
+다시 예쁘게 작성해주세요.
