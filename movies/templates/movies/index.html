@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Movie List</h2>
+{% endblock title %}
+
+{% block container %}
+{% for movie in movies %}
+<div>
+  <h3>{{ movie.pk }}. {{ movie.title }}</h3>
+  <a href="#">
+    <img src="{{ movie.poster_url }}" alt="" width="200" height="300">
+  </a>
+</div>
+{% endfor %}
+{% endblock container %}
