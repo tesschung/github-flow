@@ -1,8 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import *
-from django.contrib.auth.models import User
+from .forms import *
+# from django.contrib.auth.models import User
+# settings.AUTH_USER_MODEL 에 명시된 User 모델을 가져온다.
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # 유저 목록
 # AttributeError at /accounts/ 남
@@ -19,7 +24,7 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect(movies:index)
+        return redirect('movies:index')
     else:
         form = CustomUserCreationForm()
     context = {
@@ -48,7 +53,7 @@ def logout(request):
     return redirect('movies:index')
 
 # 유저 상세보기
-def detail(request):
+def detail(request, user_pk):
     user = get_object_or_404(User, pk=user_pk)
     context = {
         'user': user

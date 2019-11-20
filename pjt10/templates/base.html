@@ -12,7 +12,7 @@
     {% if request.user.is_authenticated %}
     <a href="{% url 'accounts:logout' %}">로그아웃</a>
     <br>
-    <a href="{% url 'movies:like_list' %}">좋아요 목록 보기</a>
+    {% comment %} <a href="{% url 'movies:like_list' %}">좋아요 목록 보기</a> {% endcomment %}
     <br>
     <a href="{% url 'accounts:detail' user.pk %}">회원정보</a>
     <br>
